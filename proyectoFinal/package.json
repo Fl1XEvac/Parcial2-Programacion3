@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "sweetalert2": "^11.14.4"
+  },
+  "scripts": {
+    "dev": "node index.js" 
+  }
+}
+  
+
