@@ -1,30 +1,39 @@
 import { renderCategories } from "./src/services/categories.js";
+import { openModal } from "./src/views/modal.js";
+import { handleGetProductsToStore } from "./src/views/store.js";
+import './style.css';
+import './src/services/product.js';
+import './src/services/categories.js';
 import { handleSearchProductByName } from "./src/services/searchBar.js";
-import { openModal } from "./src/services/view/modal.js";
+// APP
 
-import { handleGetProductToStore } from "./src/services/view/store.js";
+export let categoriaActiva = null;
 
-// APLICACION
-export let categoriaActiva=null
-export const setCategoriaActiva=(categoriaIn)=>{
-    categoriaActiva=categoriaIn
-}
-export let productoActivo=null
-export const setProductoActivo=(productoIn)=>{
-    productoActivo=productoIn
+export const setCategoriaActiva = (categoriaIn) => {
+    categoriaActiva = categoriaIn
 }
 
 
-handleGetProductToStore()
-renderCategories()
+export let productoActivo = null;
 
-// HEADER
-const buttonAdd=document.getElementById('buttonAddElement')
-buttonAdd.addEventListener('click',()=>{
-    openModal()
-})
-//buttonSearch
-const buttonSearch=document.getElementById('buttonSearch')
-buttonSearch.addEventListener('click',()=>{
-    handleSearchProductByName()
-})
+export const setProductoActivo = (productoIn) => {
+    productoActivo = productoIn
+}
+
+handleGetProductsToStore();
+renderCategories();
+//HEADER
+
+const buttonAddElement = document.getElementById("buttonAddElement");
+buttonAddElement.addEventListener("click", () => {
+    openModal();
+});
+
+
+//Search
+
+const buttonSearch = document.getElementById("buttonSearch");
+buttonSearch.addEventListener("click", () => {
+    handleSearchProductByName();
+});
+

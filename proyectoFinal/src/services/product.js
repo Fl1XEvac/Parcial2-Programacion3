@@ -3,7 +3,7 @@ import { productoActivo } from "../../main.js";
 import { handleGetProductsLocalStorage, setInLocalStorage } from "../persistence/localStorage.js";
 import { closeModal } from "../views/modal.js";
 import { handleGetProductsToStore, handleRenderList } from "../views/store.js";
-import Swal from "sweetalert2"
+import Swal from 'sweetalert2';
 const acceptBtn = document.getElementById("acceptBtn");
 acceptBtn.addEventListener("click", () => {
     handleSaveOrModify();
